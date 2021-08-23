@@ -5,15 +5,25 @@ export type HeadingProps = {
   color?: 'white' | 'black'
   lineLeft?: boolean
   lineBottom?: boolean
+  lineColor?: 'primary' | 'secondary'
+  size?: 'small' | 'medium'
 }
 
 const Heading = ({
   children,
   color,
   lineLeft = false,
-  lineBottom = false
+  lineBottom = false,
+  size = 'medium',
+  lineColor = 'primary'
 }: HeadingProps) => (
-  <S.Heading color={color} lineLeft={lineLeft} lineBottom={lineBottom}>
+  <S.Heading
+    color={color}
+    lineLeft={lineLeft}
+    lineBottom={lineBottom}
+    lineColor={lineColor}
+    size={size}
+  >
     {children}
   </S.Heading>
 )
