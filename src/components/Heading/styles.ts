@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
 import { HeadingProps } from '.'
@@ -38,13 +39,13 @@ const headingModifiers = {
 export const Heading = styled.h2<HeadingProps>`
   ${({
     theme,
-    color = 'black',
+    color,
     lineLeft,
     lineBottom,
     lineColor = 'primary',
     size
   }) => css`
-    color: ${theme.colors[color]}
+    color: ${theme.colors[color!]};
     font-size: ${theme.font.sizes.xlarge};
 
     ${media.greaterThan('medium')`
@@ -54,6 +55,5 @@ export const Heading = styled.h2<HeadingProps>`
     ${lineLeft && headingModifiers.lineLeft(theme, lineColor)}
     ${lineBottom && headingModifiers.lineBottom(theme, lineColor)}
     ${!!size && headingModifiers[size](theme)}
-
   `}
 `
