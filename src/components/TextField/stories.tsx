@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/react/types-6-0'
 import { Email } from '@styled-icons/material-outlined'
 import TextField, { TextFieldProps } from '.'
 export default {
-  title: 'TextField',
+  title: 'Form/TextField',
   component: TextField,
   args: {
     label: 'E-mail',
