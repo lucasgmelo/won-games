@@ -5,7 +5,7 @@ import { HeadingProps } from '.'
 
 type LineColors = 'primary' | 'secondary'
 
-const headingModifiers = {
+export const headingModifiers = {
   small: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.medium};
 
