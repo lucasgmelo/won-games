@@ -40,11 +40,17 @@ const wrapperModifiers = {
         margin-left: ${theme.spacings.xxsmall};
       }
     }
+  `,
+  disabled: () => css`
+    &:disabled {
+      cursor: not-allowed;
+      filter: saturate(30%);
+    }
   `
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, size, fullWidth, hasIcon, minimal }) => css`
+  ${({ theme, size, fullWidth, hasIcon, minimal, disabled }) => css`
     background: linear-gradient(180deg, #ff5f5f 0%, #f062c0 50%);
     color: ${theme.colors.white};
     font-family: ${theme.font.family};
@@ -71,5 +77,6 @@ export const Wrapper = styled.button<WrapperProps>`
     ${!!hasIcon && wrapperModifiers.withIcon(theme)}
     ${fullWidth && wrapperModifiers.fullWidth()}
     ${minimal && wrapperModifiers.minimal(theme)}
+    ${disabled && wrapperModifiers.disabled()};
   `}
 `
