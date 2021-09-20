@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BannerProps } from 'components/Banner'
 import BannerSlider from 'components/BannerSlider'
 import { Container } from 'components/Container'

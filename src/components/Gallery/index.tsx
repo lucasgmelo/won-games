@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect, useRef } from 'react'
-import { ArrowBackIos as ArrowLeft } from '@styled-icons/material-outlined/ArrowBackIos'
-import { ArrowForwardIos as ArrowRight } from '@styled-icons/material-outlined/ArrowForwardIos'
+import { ArrowLeft } from '@styled-icons/remix-line/ArrowLeft'
+import { ArrowRight } from '@styled-icons/remix-line/ArrowRight'
 import { Close } from '@styled-icons/material-outlined/Close'
 import SlickSlider from 'react-slick'
 
