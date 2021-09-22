@@ -1,10 +1,10 @@
 import { Story, Meta } from '@storybook/react/types-6-0'
-import Gallery, { GalleryProps } from '.'
+import Galery, { GaleryProps } from '.'
 import items from './mock'
 
 export default {
-  title: 'Gallery',
-  component: Gallery,
+  title: 'Galery',
+  component: Galery,
   args: {
     items
   },
@@ -16,8 +16,8 @@ export default {
   }
 } as Meta
 
-export const Default: Story<GalleryProps> = (args) => (
+export const Default: Story<GaleryProps> = (args) => (
   <div style={{ maxWidth: '130rem', margin: '0 auto' }}>
-    <Gallery {...args} />
+    <Galery {...args} />
   </div>
 )

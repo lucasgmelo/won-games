@@ -54,16 +54,16 @@ const modalSettings: SliderSettings = {
   slidesToShow: 1
 }
 
-export type GalleryImageProps = {
+export type GaleryImageProps = {
   src: string
   label: string
 }
 
-export type GalleryProps = {
-  items: GalleryImageProps[]
+export type GaleryProps = {
+  items: GaleryImageProps[]
 }
 
-const Gallery = ({ items }: GalleryProps) => {
+const Galery = ({ items }: GaleryProps) => {
   const [isOpen, setIsOpen] = useState(false)
   const slider = useRef<SlickSlider>(null)
 
@@ -104,7 +104,7 @@ const Gallery = ({ items }: GalleryProps) => {
         <S.Content>
           <Slider ref={slider} settings={modalSettings}>
             {items.map((item, index) => (
-              <img key={`gallery-${index}`} src={item.src} alt={item.label} />
+              <img key={`galery-${index}`} src={item.src} alt={item.label} />
             ))}
           </Slider>
         </S.Content>
@@ -113,4 +113,4 @@ const Gallery = ({ items }: GalleryProps) => {
   )
 }
 
-export default Gallery
+export default Galery

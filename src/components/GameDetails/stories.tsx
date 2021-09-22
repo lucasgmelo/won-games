@@ -15,7 +15,7 @@ export default {
     releaseDate: {
       control: 'date'
     },
-    platforms: {
+    plataforms: {
       control: {
         type: 'inline-check',
         options: ['windows', 'linux', 'mac']

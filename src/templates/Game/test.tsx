@@ -1,6 +1,6 @@
 import { screen } from '@testing-library/react'
 
-import galleryMock from 'components/Gallery/mock'
+import galeryMock from 'components/Galery/mock'
 import gameInfoMock from 'components/GameInfo/mock'
 import gameDetailsMock from 'components/GameDetails/mock'
 import gamesMock from 'components/GameCardSlider/mock'
@@ -13,7 +13,7 @@ import { renderWithTheme } from 'utils/tests/helpers'
 const props: GameTemplateProps = {
   cover: 'bg-image.jpg',
   gameInfo: gameInfoMock,
-  gallery: galleryMock,
+  galery: galeryMock,
   description: `<h1>Custom HTML</h1>`,
   details: gameDetailsMock as GameDetailsProps,
   upcomingGames: gamesMock,
@@ -28,10 +28,10 @@ jest.mock('components/Menu', () => ({
   }
 }))
 
-jest.mock('components/Gallery', () => ({
+jest.mock('components/Galery', () => ({
   __esModule: true,
   default: function Mock() {
-    return <div data-testid="Mock Gallery" />
+    return <div data-testid="Mock Galery" />
   }
 }))
 
@@ -59,27 +59,27 @@ jest.mock('components/Showcase', () => ({
 describe('<Game />', () => {
   it('should render the template with components', () => {
     renderWithTheme(<Game {...props} />)
-    expect(screen.getByTestId('Mock Gallery')).toBeInTheDocument()
+    expect(screen.getByTestId('Mock Galery')).toBeInTheDocument()
     expect(screen.getByTestId('Mock GameDetails')).toBeInTheDocument()
     expect(screen.getByTestId('Mock GameInfo')).toBeInTheDocument()
     expect(screen.getAllByTestId('Mock Showcase')).toHaveLength(2)
     expect(screen.getByText(/custom html/i)).toBeInTheDocument()
   })
 
-  it('should not render the gallery if no images', () => {
-    renderWithTheme(<Game {...props} gallery={undefined} />)
+  it('should not render the galery if no images', () => {
+    renderWithTheme(<Game {...props} galery={undefined} />)
 
-    expect(screen.queryByTestId('Mock Gallery')).not.toBeInTheDocument()
+    expect(screen.queryByTestId('Mock Galery')).not.toBeInTheDocument()
   })
 
-  it('should not render the gallery on mobile', () => {
+  it('should not render the galery on mobile', () => {
     renderWithTheme(<Game {...props} />)
 
-    expect(screen.getByTestId('Mock Gallery').parentElement).toHaveStyle({
+    expect(screen.getByTestId('Mock Galery').parentElement).toHaveStyle({
       display: 'none'
     })
 
-    expect(screen.getByTestId('Mock Gallery').parentElement).toHaveStyleRule(
+    expect(screen.getByTestId('Mock Galery').parentElement).toHaveStyleRule(
       'display',
       'block',
       {
