@@ -10,24 +10,32 @@ import * as S from './styles'
 
 export type HomeTemplateProps = {
   banners: BannerProps[]
+  newGamesTitle: string
   newGames: GameCardProps[]
+  mostPopularGamesTitle: string
   mostPopularHighlight: HighlightProps
   mostPopularGames: GameCardProps[]
-  upcomingGames: GameCardProps[]
-  upcomingHighligth: HighlightProps
+  upcommingGamesTitle: string
+  upcommingGames: GameCardProps[]
+  upcommingHighlight: HighlightProps
+  freeGamesTitle: string
   freeGames: GameCardProps[]
-  freeHighligth: HighlightProps
+  freeHighlight: HighlightProps
 }
 
 const Home = ({
   banners,
+  newGamesTitle,
   newGames,
+  mostPopularGamesTitle,
   mostPopularHighlight,
   mostPopularGames,
-  upcomingGames,
-  upcomingHighligth,
+  upcommingGamesTitle,
+  upcommingGames,
+  upcommingHighlight,
+  freeGamesTitle,
   freeGames,
-  freeHighligth
+  freeHighlight
 }: HomeTemplateProps) => (
   <Base>
     <Container>
@@ -37,22 +45,26 @@ const Home = ({
     </Container>
 
     <S.SectionNews>
-      <Showcase title="News" games={newGames} color="black" />
+      <Showcase title={newGamesTitle} games={newGames} color="black" />
     </S.SectionNews>
 
     <Showcase
-      title="Most Popular"
+      title={mostPopularGamesTitle}
       highlight={mostPopularHighlight}
       games={mostPopularGames}
     />
 
     <Showcase
-      title="Upcoming"
-      games={upcomingGames}
-      highlight={upcomingHighligth}
+      title={upcommingGamesTitle}
+      games={upcommingGames}
+      highlight={upcommingHighlight}
     />
 
-    <Showcase title="Free games" highlight={freeHighligth} games={freeGames} />
+    <Showcase
+      title={freeGamesTitle}
+      highlight={freeHighlight}
+      games={freeGames}
+    />
   </Base>
 )
 export default Home
