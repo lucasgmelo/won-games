@@ -28,7 +28,6 @@ const Home = ({
   newGamesTitle,
   newGames,
   mostPopularGamesTitle,
-  mostPopularHighlight,
   mostPopularGames,
   upcommingGamesTitle,
   upcommingGames,
@@ -50,7 +49,7 @@ const Home = ({
 
     <Showcase
       title={mostPopularGamesTitle}
-      highlight={mostPopularHighlight}
+      highlight={freeHighlight}
       games={mostPopularGames}
     />
 
@@ -62,8 +61,8 @@ const Home = ({
 
     <Showcase
       title={freeGamesTitle}
-      highlight={freeHighlight}
       games={freeGames}
+      highlight={freeHighlight}
     />
   </Base>
 )
