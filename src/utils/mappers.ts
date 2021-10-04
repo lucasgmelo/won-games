@@ -1,8 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { QueryGames_games } from 'graphql/generated/QueryGames'
-import {
-  QueryHome_banners,
-  QueryHome_sections_popularGames_highlight
-} from 'graphql/generated/QueryHome'
+import { QueryHome_banners } from 'graphql/generated/QueryHome'
+import { QueryRecommended_recommended_section_highlight } from 'graphql/generated/QueryRecommended'
 
 export const bannerMapper = (banners: QueryHome_banners[]) => {
   return banners.map((banner) => ({
@@ -33,7 +32,11 @@ export const gamesMapper = (games: QueryGames_games[] | null | undefined) => {
 }
 
 export const highlightMapper = (
-  highlight: QueryHome_sections_popularGames_highlight | null | undefined
+  highlight:
+    | QueryRecommended_recommended_section_highlight
+    | null
+    | undefined
+    | any
 ) => {
   return (
     highlight && {
